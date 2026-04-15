@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Dar Lgaming</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background: #05050a;">
+    <div class="checkout-wrapper">
+        <div class="product-preview-card">
+            <span class="badge">YOUR SELECTION</span>
+            <img src="" alt="product" id="p-img">
+            <h2 id="p-name">Loading...</h2>
+            <div class="price-large" id="p-price">0 DH</div>
+            <div class="trust-badges" style="color: #22c55e; margin-top: 20px;">
+                <p>توصيل سريع لجميع المدن ✓</p>
+                <p>الدفع عند الاستلام (COD) ✓</p>
+            </div>
+        </div>
+
+        <div class="order-details-box">
+            <h2>Order Details</h2>
+            <form action="https://formspree.io/f/mzdydvvw" method="POST">
+                <label>Nom Complet</label>
+                <input type="text" name="Full_Name" class="input-field" placeholder="Smitak l-kamila" required>
+                
+                <label>Téléphone</label>
+                <input type="tel" name="Phone_Number" class="input-field" placeholder="Nemra d l-WhatsApp" required>
+                
+                <label>Ville</label>
+                <input type="text" name="City" class="input-field" placeholder="L-mdina" required>
+                
+                <label>Adresse</label>
+                <textarea name="Address" class="input-field" rows="3" placeholder="Fin saken nichen" required></textarea>
+
+                <input type="hidden" name="Product_Ordered" id="p-name-hidden">
+                <input type="hidden" name="Price" id="p-price-hidden">
+
+                <button type="submit" class="confirm-btn">Confirm Order</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        if(params.get('name')) {
+            const name = params.get('name');
+            const price = params.get('price');
+            const img = params.get('image');
+
+            // 1. Update l-view dial l-client
+            document.getElementById('p-name').innerText = name;
+            document.getElementById('p-price').innerText = price + " DH";
+            document.getElementById('p-img').src = img;
+
+            // 2. Update l-hidden inputs bach i-mchiw f Formspree
+            document.getElementById('p-name-hidden').value = name;
+            document.getElementById('p-price-hidden').value = price + " DH";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Pad Details - Dar Lgaming</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="details-page-wrapper">
+
+    <div class="details-container">
+        <div class="product-visual">
+            <img src="" alt="Mouse Pad" id="p-img">
+        </div>
+
+        <div class="product-info-box">
+            <span class="category-tag">Mouse Pad</span>
+            <h1 id="p-name" class="product-title">Loading...</h1>
+            
+            <p class="product-description">
+                High-quality gaming mouse pad with anti-slip base. Perfect for long gaming sessions and precision movements.
+            </p>
+            
+            <div class="specs-grid">
+                <div class="spec-item">📏 Speed Surface</div>
+                <div class="spec-item">🛡️ Anti-Slip</div>
+                <div class="spec-item">🧵 Stitched Edges</div>
+            </div>
+
+            <div class="price-section">
+                <span class="final-price" id="p-price">70 DH</span>
+                <span class="stock-status">✓ In Stock</span>
+            </div>
+
+            <div class="action-btns">
+                <a id="order-link" href="#" class="buy-now-btn">
+                   Order Now
+                </a>
+                <a href="index.html#gear" class="back-link">← Back to Shop</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const name = params.get('name');
+        const img = params.get('img');
+        const price = "70"; // التمن ديالهوم هو 70 درهم
+
+        if(name && img) {
+            document.getElementById('p-name').innerText = name;
+            document.getElementById('p-img').src = img;
+            document.getElementById('p-img').alt = name;
+            document.getElementById('order-link').href = `order.html?name=${encodeURIComponent(name)}&price=${price}&image=${encodeURIComponent(img)}`;
+        }
+    </script>
+</body>
+</html>

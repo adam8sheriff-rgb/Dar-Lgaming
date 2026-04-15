@@ -1,39 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/logo1.jpeg" href="logo1.jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dar Lgaming </title>
+    <title>Dar Lgaming - Level Up Your Setup</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
-    <header>
+    <nav>
         <div class="logo">
-            <img src="logo1.jpeg" alt="logo">
-            <span>DAR <span class="accent">LGAMING</span></span>
+            <img src="logo1.jpeg" alt="Logo">
+            <span>DAR LGAMING</span>
         </div>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#gear">Gear</a>
-            <a href="#setup">Setup</a>
-            <a href="https://wa.me/212703261093" class="cta-nav" target="_blank">Order Now</a>
-        </nav>
-    </header>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#gear">Gear</a></li>
+            <li><a href="#setup">Setup</a></li>
+            <li><a href="https://wa.me/212703261093?text=Bonjour%20Dar%20Lgaming,%20bghit%20n-commander%20chi%20produit!" style="background:var(--accent); color:black; padding:8px 15px; border-radius:5px; font-weight:bold;">Order Now</a></li>
+        </ul>
+    </nav>
 
-    <section class="hero">
+    <header class="hero" id="home">
         <div class="hero-content">
-            <span class="badge">New Collection 2026</span>
-            <h1>Level Up Your <span class="glow-text">Setup</span></h1>
-            <p>High-performance peripherals for competitive gamers.</p>
-            <div class="hero-btns">
-                <a href="#gear" class="btn-primary">View Inventory</a>
-                <a href="#contact" class="btn-secondary">Contact Us</a>
-            </div>
+            <h1>Level Up Your <span>Gaming Experience</span></h1>
+            <p>High-quality gaming gear delivered to your doorstep.</p>
+            <a href="#gear" class="cta-btn">Explore Shop</a>
         </div>
-    </section>
+    </header>
 
     <section class="inventory" id="gear">
         <div class="section-header">
@@ -45,73 +40,110 @@
             <div class="product-card">
                 <div class="product-img">
                     <img src="headsetrazer.png" alt="Black Shark V2 X">
-                    <span class="price">419 DH</span>
+                    <span class="price-badge">419 DH</span>
                 </div>
                 <div class="product-info">
                     <h3>Black Shark V2 X</h3>
                     <p>7.1 Surround Sound - Ultra Light</p>
-                    <a href="https://wa.me/212703261093?text=Bghit Black Shark V2 X" class="buy-btn">Buy via WhatsApp</a>
+                    <div class="card-btns">
+                        <a href="headset.html" class="buy-btn details-btn">Details</a>
+                        <a href="order.html?name=Black%20Shark%20V2%20X&price=419&image=headsetrazer.png" class="buy-btn order-btn">Order Now</a>
+                    </div>
                 </div>
             </div>
 
             <div class="product-card">
                 <div class="product-img">
                     <img src="mouserazer.png" alt="Razer Deathadder">
-                    <span class="price">250 DH</span>
+                    <span class="price-badge">250 DH</span>
                 </div>
                 <div class="product-info">
                     <h3>Razer Deathadder</h3>
-                    <p>Ergonomic Design - 6400 DPI</p>
-                    <a href="https://wa.me/212703261093?text=Bghit Razer Deathadder" class="buy-btn">Buy via WhatsApp</a>
+                    <p>6400 DPI - Ergonomic Grip</p>
+                    <div class="card-btns">
+                        <a href="mouse.html" class="buy-btn details-btn">Details</a>
+                        <a href="order.html?name=Razer%20Deathadder&price=250&image=mouserazer.png" class="buy-btn order-btn">Order Now</a>
+                    </div>
                 </div>
             </div>
 
             <div class="product-card">
                 <div class="product-img">
                     <img src="monitorlightbar.png" alt="Monitor Light Bar">
-                    <span class="price">180 DH</span>
+                    <span class="price-badge">180 DH</span>
                 </div>
                 <div class="product-info">
                     <h3>Monitor Light Bar</h3>
                     <p>Eye Care - Adjustable Brightness</p>
-                    <a href="https://wa.me/212703261093?text=Bghit Light Bar" class="buy-btn">Buy via WhatsApp</a>
+                    <div class="card-btns">
+                        <a href="lightbar.html" class="buy-btn details-btn">Details</a>
+                        <a href="order.html?name=Monitor%20Light%20Bar&price=180&image=monitorlightbar.png" class="buy-btn order-btn">Order Now</a>
+                    </div>
                 </div>
             </div>
+          <div class="product-card">
+    <div class="product-img">
+        <img src="mousepad0.png" alt="ROG Mouse Pad">
+        <span class="price-badge">70 DH</span>
+    </div>
+    <div class="product-info">
+        <h3>ROG Gaming Pad</h3>
+        <p>Speed Edition - RGB Design</p>
+        <div class="card-btns">
+            <a href="mousepad.html?name=ROG%20Gaming%20Pad&img=mousepad0.png" class="buy-btn details-btn">Details</a>
+            <a href="order.html?name=ROG%20Gaming%20Pad&price=70&image=mousepad0.png" class="buy-btn order-btn">Order Now</a>
+        </div>
+    </div>
+</div>
 
-            <div class="product-card">
-                <div class="product-img">
-                    <img src="webcam.png" alt="Webcam">
-                    <span class="price">199 DH</span>
-                </div>
-                <div class="product-info">
-                    <h3>HD Web Cam</h3>
-                    <p>1080p - Built-in Microphone</p>
-                    <a href="https://wa.me/212703261093?text=Bghit Web Cam" class="buy-btn">Buy via WhatsApp</a>
-                </div>
-            </div>
+<div class="product-card">
+    <div class="product-img">
+        <img src="mousepad1.png" alt="MSI Mouse Pad">
+        <span class="price-badge">70 DH</span>
+    </div>
+    <div class="product-info">
+        <h3>MSI Gaming Pad</h3>
+        <p>Smooth Control - MSI Edition</p>
+        <div class="card-btns">
+            <a href="mousepad.html?name=MSI%20Gaming%20Pad&img=mousepad1.png" class="buy-btn details-btn">Details</a>
+            <a href="order.html?name=MSI%20Gaming%20Pad&price=70&image=mousepad1.png" class="buy-btn order-btn">Order Now</a>
+        </div>
+    </div>
+</div>
+
+<div class="product-card">
+    <div class="product-img">
+        <img src="mousepad2.png" alt="UK Flag Mouse Pad">
+        <span class="price-badge">70 DH</span>
+    </div>
+    <div class="product-info">
+        <h3>UK Edition Pad</h3>
+        <p>Special Design - Anti-Slip</p>
+        <div class="card-btns">
+            <a href="mousepad.html?name=UK%20Edition%20Pad&img=mousepad2.png" class="buy-btn details-btn">Details</a>
+            <a href="order.html?name=UK%20Edition%20Pad&price=70&image=mousepad2.png" class="buy-btn order-btn">Order Now</a>
+        </div>
+    </div>
+</div>
         </div>
     </section>
-
-   <section class="contact" id="contact">
-    <div class="contact-card">
-        <h2>Ready to Upgrade?</h2>
-        <p>Livrison f kolchi fl'Maghrib. Chri daba o thlla f setup dyalk.</p>
+   <section class="footer-section">
+    <div class="footer-container"> <div class="footer-content">
+            <h2>DAR LGAMING</h2>
+            <p>Livraison f flMaghrib Kaml. Chri daba o thlla f setup dyalk.</p>
+        </div>
         
-        <div class="social-links">
-            <a href="https://wa.me/212703261093" target="_blank" class="whatsapp-btn">
+        <div class="footer-btns">
+            <a href="https://wa.me/212703261093" target="_blank" class="footer-btn wa-btn">
                 <i class="fab fa-whatsapp"></i> WhatsApp
             </a>
-
-            <a href="https://www.tiktok.com/@darlgaming01" target="_blank" class="tiktok-btn">
+            <a href="https://www.tiktok.com/@darlgaming01" target="_blank" class="footer-btn tt-btn">
                 <i class="fab fa-tiktok"></i> TikTok
             </a>
         </div>
     </div>
 </section>
-
-    <footer>
-        <p>© 2026 DAR LGAMING • Moroccan Pro Gamers Store</p>
-    </footer>
-
+</div>
 </body>
 </html>
+    
