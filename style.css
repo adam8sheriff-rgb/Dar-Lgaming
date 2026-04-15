@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Orbitron:wght@400;700&display=swap');
 
 :root {
     --bg: #05050a;
     --card-bg: #0f0f1d;
     --accent: #a855f7; 
     --text: #ffffff;
+    --green: #22c55e;
 }
 
 * {
@@ -22,27 +22,42 @@ body {
     overflow-x: hidden;
 }
 
-/* Navbar Fix */
+/* --- 1. Navbar --- */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 5%;
+    padding: 15px 5%;
     background: rgba(10, 10, 21, 0.95);
     position: sticky;
     top: 0;
     z-index: 1000;
+    backdrop-filter: blur(10px);
 }
 
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    text-decoration: none;
 }
 
 .logo img {
-    width: 40px;
+    height: 40px;
+    width: auto;
     border-radius: 50%;
+    border: 1.5px solid var(--accent);
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.4);
+}
+
+.logo span {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: 0.3s;
 }
 
 nav ul {
@@ -55,12 +70,17 @@ nav ul li a {
     color: var(--text);
     text-decoration: none;
     font-weight: 500;
+    transition: 0.3s;
 }
 
-/* Hero Section Fix */
+nav ul li a:hover {
+    color: var(--accent);
+}
+
+/* --- 2. Hero Section --- */
 .hero {
     height: 80vh;
-    background: linear-gradient(rgba(5, 5, 10, 0.7), rgba(5, 5, 10, 0.7)), url('logo1.jpeg'); /* Hna t-akked men smyet tswira */
+    background: linear-gradient(rgba(5, 5, 10, 0.7), rgba(5, 5, 10, 0.7)), url('logo1.jpeg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -69,9 +89,7 @@ nav ul li a {
     text-align: center;
 }
 
-.hero h1 span {
-    color: var(--accent);
-}
+.hero h1 span { color: var(--accent); }
 
 .cta-btn {
     display: inline-block;
@@ -82,48 +100,36 @@ nav ul li a {
     border-radius: 5px;
     font-weight: bold;
     margin-top: 20px;
+    transition: 0.3s;
 }
 
-/* Inventory & Grid Fix */
-.inventory {
-    padding: 80px 5%;
-}
+/* --- 3. Inventory & Product Grid --- */
+.inventory { padding: 80px 5%; }
 
-.section-header {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.underline {
-    width: 80px;
-    height: 4px;
-    background: var(--accent);
-    margin: 10px auto;
-}
+.section-header { text-align: center; margin-bottom: 50px; }
+.underline { width: 80px; height: 4px; background: var(--accent); margin: 10px auto; }
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
 }
 
-/* 1. L-Card kamla t-welli k-7la b7al s-site */
 .product-card {
-    background: rgba(255, 255, 255, 0.03); /* Background khfif bach t-ban l-card */
-    border: 1px solid rgba(168, 85, 247, 0.1); /* Border rqiiiiiq purple */
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(168, 85, 247, 0.1);
     border-radius: 15px;
     padding: 15px;
     transition: 0.4s ease;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 .product-img {
     position: relative;
     background: #000;
     border-radius: 12px;
-    height: 180px; /* Rejja3na l-toul l-9dim li kan nadi */
+    height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -132,92 +138,124 @@ nav ul li a {
 }
 
 .product-img img {
-    /* Hadi hya l-aham: n-rejja3oha contain walakin b-misa7a akbar */
     max-width: 90%;
     max-height: 90%;
-    object-fit: contain; 
+    object-fit: contain;
     transition: 0.4s ease;
 }
 
-/* Fach k-tdouz b l-mouse */
-.product-card:hover .product-img img {
-    transform: scale(1.1);
-}
-
-/* Hover effect bach i-bān l-interraction */
 .product-card:hover {
     background: rgba(168, 85, 247, 0.05);
-    border-color: rgba(168, 85, 247, 0.4);
-    transform: scale(1.05);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-color: var(--accent);
+    transform: translateY(-5px);
 }
 
-.product-info h3 {
-    font-size: 1.1rem;
-    color: #fff;
-    margin-bottom: 5px;
-    font-family: 'Orbitron', sans-serif; /* Hadik l-font li drna l-logo */
-}
-.product-card:hover .product-img {
-   transform: scale(1.1); /* Kat-kber chwya fach k-tdouz b l-mouse */
-}
+.product-info h3 { font-family: 'Orbitron', sans-serif; font-size: 1.1rem; }
 
 .price-badge {
-    position: absolute; /* Bach i-t-7at fou9 tswira */
+    position: absolute;
     top: 10px;
     right: 10px;
-    background: var(--accent); /* Dak l-purple */
+    background: var(--accent);
     color: #000;
     padding: 4px 10px;
     border-radius: 6px;
     font-weight: 800;
-    font-size: 0.85rem;
-    box-shadow: 0 4px 10px rgba(168, 85, 247, 0.4);
-    z-index: 10;
 }
 
-.card-btns {
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
-}
+.card-btns { display: flex; gap: 10px; margin-top: auto; padding-top: 15px; }
 
-.buy-btn {
-    flex: 1;
-    padding: 10px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: 600;
-}
+.buy-btn { flex: 1; padding: 10px; text-align: center; text-decoration: none; border-radius: 5px; font-weight: 600; }
+.details-btn { border: 1px solid var(--accent); color: var(--accent); }
+.order-btn { background: var(--accent); color: #000; }
 
-.details-btn {
-    border: 1px solid var(--accent);
-    color: var(--accent);
-}
-
-.order-btn {
-    background: var(--accent);
-    color: #000;
-}
-
-/* Order Page Layout Fix */
-.checkout-wrapper {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 50px 5%;
-    flex-wrap: wrap;
-    background: var(--bg);
-    min-height: 100vh;
-}
-
-.product-preview-card, .order-details-box {
-    background: var(--card-bg);
-    padding: 40px;
-    border-radius: 20px;
+/* Container الكبير */
+/* الحاوية اللي جامعة كاع الريفيوز */
+/* الحاوية اللي جامعة الكارديات */
+.reviews-container {
+    display: grid;
+    /* زدت العرض الأدنى من 300px لـ 350px باش الكارديات يعراضو شوية */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+    gap: 30px; 
     width: 100%;
-    max-width: 450px;
+    max-width: 1300px; /* الحاوية غتبقى عريضة ووسطها الكارديات عراض */
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* تعديل الكارد باش تستافد من العرض الجديد */
+.review-card {
+    background: rgba(255, 255, 255, 0.03); 
+    border: 1px solid rgba(168, 85, 247, 0.1);
+    border-radius: 20px;
+    padding: 25px; /* زدنا شوية ف الـ padding لداخل باش تعراض */
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+}
+
+/* إطار الصورة 4:3 غيولي دابا باين كبر حيت الكارد عرضات */
+.setup-img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+.review-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+    background: rgba(168, 85, 247, 0.05);
+    box-shadow: 0 10px 40px rgba(168, 85, 247, 0.15);
+}
+
+/* الصور داخل الكارد (4:3) */
+.setup-img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+.setup-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Responsive للتلفون */
+@media (max-width: 992px) {
+    .reviews-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .reviews-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- 5. Checkout & Details Pages --- */
+.checkout-wrapper, .details-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.product-preview-card, .order-details-box, .product-visual, .product-info-details {
+    flex: 1;
+    min-width: 300px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(168, 85, 247, 0.1);
+    border-radius: 20px;
+    padding: 30px;
 }
 
 .input-field {
@@ -228,317 +266,40 @@ nav ul li a {
     color: white;
     border-radius: 8px;
     margin-bottom: 15px;
-    outline: none;
 }
-/* Had l-code khass b l-card dyal tswira (l-isarr) */
-.product-preview-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
+/* --- 6. Footer --- */
+.footer-section {
+    padding: 60px 5%;
+    background: #05050a;
+    border-top: 1px solid rgba(168, 85, 247, 0.1);
     text-align: center;
 }
 
-.product-preview-card img {
-    width: 100%;
-    max-width: 300px; /* Bach tswira mat-kberch bezzaf */
-    height: 300px;    /* Bach kolchi i-ji f nfs l-7ajm */
-    object-fit: contain; /* Hada houwa lli ghadi i-gadd l-casque w l-lightbar */
-    margin-bottom: 20px;
-    filter: drop-shadow(0 0 15px rgba(168, 85, 247, 0.2));
-}
-
-.product-preview-card h2 {
-    color: var(--text);
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-}
-
-.price-large {
-    color: var(--accent);
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-/* Bach dok l-khdira (checkmarks) i-jiw m9addin */
-.trust-badges {
-    text-align: left;
-    width: 100%;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 20px;
-    color: #22c55e;
-    font-size: 0.9rem;
-}
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.logo img {
-    height: 45px; /* Bach t-bqa m9adda f l-height */
-    width: auto;
-    border-radius: 50%;
-    border: 2px solid var(--accent);
-    box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
-}
-
-.logo span {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.1rem; /* Sghrnaha bach t-ji elegant */
-    font-weight: 700;
-    letter-spacing: 1.5px; /* Na9ssna chwya bin l-7ourof */
-    color: #fff;
-    text-transform: uppercase;
-    /* Glow khafif m9ad */
-    text-shadow: 0 0 8px rgba(168, 85, 247, 0.4); 
-    transition: 0.3s ease;
-}
-
-.logo img {
-    height: 35px; 
-    width: auto;
-    border-radius: 50%;
-    border: 1.5px solid var(--accent);
-}
-
-.logo:hover span {
-    color: var(--accent);
-    text-shadow: 0 0 12px rgba(168, 85, 247, 0.6);
-}
 .footer-btns {
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin-top: 20px;
+    margin-top: 25px;
+    flex-wrap: wrap;
 }
 
 .footer-btn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 25px;
-    border-radius: 8px;
+    padding: 12px 25px;
+    border-radius: 10px;
     text-decoration: none;
     font-weight: 700;
-    transition: 0.3s;
     color: white;
-}
-
-/* WhatsApp Green */
-.wa-btn {
-    background: #22c55e;
-}
-
-.wa-btn:hover {
-    background: #16a34a;
-    box-shadow: 0 0 15px rgba(34, 197, 94, 0.4);
-}
-
-/* TikTok Black */
-.tt-btn {
-    background: #000;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.tt-btn:hover {
-    background: #111;
-    border-color: #fe2c55; /* TikTok Red Pink */
-    box-shadow: 0 0 15px rgba(254, 44, 85, 0.3);
-}
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Bach i-jiw m-sttfin mzyan */
-    gap: 25px;
-    padding: 20px 0;
-}
-.footer-section {
-    padding: 60px 5%;
-    display: flex;
-    justify-content: center;
-}
-
-.footer-container {
-    background: rgba(168, 85, 247, 0.05); /* Glow purple khfiiif */
-    border: 1px solid rgba(168, 85, 247, 0.2);
-    border-radius: 20px;
-    padding: 40px;
-    width: 100%;
-    max-width: 900px;
-    text-align: center;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-}
-
-.footer-content h2 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 2rem;
-    color: #fff;
-    margin-bottom: 10px;
-}
-
-.footer-content p {
-    color: #aaa;
-    margin-bottom: 30px;
-}
-
-.footer-btns {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap; /* Bach i-jiw mzyanin hta f phone */
-}
-/* Container l-kbira li jam3ahom */
-.checkout-wrapper {
-    display: flex;
-    flex-direction: row; /* I-jiw jneb l-jneb */
-    justify-content: center;
-    align-items: flex-start;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 50px auto;
-    padding: 20px;
-}
-
-/* L-jiha dial l-produit */
-.product-preview-card {
-    flex: 1;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(168, 85, 247, 0.1);
-    border-radius: 20px;
-    padding: 30px;
-    text-align: center;
-}
-
-.product-preview-card img {
-    max-width: 100%;
-    height: 300px; /* T-9ad l-toul dial tswira */
-    object-fit: contain;
-}
-
-/* L-jiha dial l-form */
-.order-details-box {
-    flex: 1;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(168, 85, 247, 0.1);
-    border-radius: 20px;
-    padding: 30px;
-}
-
-/* Responsive: mlli i-koun telfon sghir */
-@media (max-width: 768px) {
-    .checkout-wrapper {
-        flex-direction: column; /* I-welli wa7ed fo9 wa7ed f telfon */
-        align-items: center;
-    }
-    
-    .product-preview-card, .order-details-box {
-        width: 100%;
-    }
-}
-.details-page {
-    background: #05050a;
-    color: white;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.details-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* K-i-9sem l-paja 3la 2 */
-    gap: 50px;
-    max-width: 1100px;
-    padding: 40px;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(168, 85, 247, 0.1);
-    border-radius: 30px;
-    backdrop-filter: blur(10px);
-}
-
-.product-visual img {
-    width: 100%;
-    height: auto;
-    filter: drop-shadow(0 0 20px rgba(168, 85, 247, 0.3)); /* Glow dial RGB */
-}
-
-.category-tag {
-    color: #a855f7;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.8rem;
-}
-
-.product-title {
-    font-size: 3rem;
-    margin: 10px 0;
-    background: linear-gradient(to right, #fff, #a855f7);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.specs-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin: 25px 0;
-}
-
-.spec-item {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 0.9rem;
-    text-align: center;
-}
-
-.buy-now-btn {
-    display: block;
-    background: #a855f7;
-    color: white;
-    text-decoration: none;
-    padding: 15px 30px;
-    border-radius: 12px;
-    text-align: center;
-    font-weight: bold;
     transition: 0.3s;
 }
 
-.buy-now-btn:hover {
-    box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
-    transform: translateY(-3px);
-}
+.wa-btn { background: #22c55e; }
+.tt-btn { background: #000; border: 1px solid #fff; }
 
-.details-page-wrapper {
-    display: flex;
-    justify-content: center; 
-    align-items: center;     
-    min-height: 100vh;       
-    background-color: var(--bg);
-    padding: 20px;
-}
+.wa-btn:hover { transform: scale(1.05); box-shadow: 0 0 15px rgba(34, 197, 94, 0.4); }
 
-.details-container {
-    display: flex;
-    flex-direction: row;     
-    justify-content: center; 
-    align-items: center;
-    gap: 50px;              
-    max-width: 1200px;       
-    width: 90%;              
-    margin: auto;           
-    background: rgba(255, 255, 255, 0.02);
-    padding: 40px;
-    border-radius: 30px;
-    border: 1px solid rgba(168, 85, 247, 0.1);
-    backdrop-filter: blur(10px);
-}
-
+/* Mobile Responsive */
 @media (max-width: 768px) {
-    .details-container {
-        flex-direction: column; 
-        text-align: center;
-        gap: 30px;
-    }
+    .checkout-wrapper, .details-container { flex-direction: column; }
+    .product-title { font-size: 2rem; }
 }
