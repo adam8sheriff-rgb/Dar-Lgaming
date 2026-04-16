@@ -257,7 +257,24 @@ nav ul li a:hover {
     border-radius: 20px;
     padding: 30px;
 }
+/* هاد الكود كيتكلف بالصور لداخل باش ما يخرجوش على الإطار */
+.product-preview-card img, .product-visual img {
+    width: 100%;           /* العرض كياخد البلاصة كاملة */
+    max-height: 300px;     /* الطول ما يفوتش 300px باش ما تخرجش على Order */
+    object-fit: contain;   /* أهم سطر: كيخلي الصورة تبان كاملة وتصغار لوسط الإطار */
+    display: block;
+    margin: 0 auto 20px auto;
+    border-radius: 10px;
+}
 
+/* هادا كيزيد يضمن أن الكارط براسها ما تخرجش عليها الصورة */
+.product-preview-card, .product-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; 
+}
 .input-field {
     width: 100%;
     padding: 12px;
@@ -302,4 +319,24 @@ nav ul li a:hover {
 @media (max-width: 768px) {
     .checkout-wrapper, .details-container { flex-direction: column; }
     .product-title { font-size: 2rem; }
+}
+/* هاد الكود كيخلي أي صورة لداخل ما تخرجش على الإطار */
+.product-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* هادي كتحافظ على أبعاد الصورة وبلا ما تقطعها */
+    display: block;
+}
+
+/* تعديل إطار الصورة باش يكون منظم */
+.product-visual {
+    width: 100%;
+    max-width: 500px; /* تقدر تبدل هاد القياس على حساب شحال بغيتيها تعرض */
+    height: 400px;    /* كنعطيوها طول ثابت باش ما تبقاش تزيد وتنقص */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.02); /* لون خفيف ف الخلفية */
+    border-radius: 15px;
+    overflow: hidden; /* أي حاجة خارجة كتمسح */
 }
